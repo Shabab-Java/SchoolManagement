@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.jdc.schoolMgntSystem.model.StudentProfile;
 @Repository
 public interface StudentRepository extends JpaRepository<StudentProfile, Long> {
+	
+	public StudentProfile findByUserId(String userId);
 
 }

@@ -59,7 +59,9 @@ public class StudentProfile {
 	@Column(name = "CONTACT_NUMBER", nullable = true)
 	private String contactNumber;
 
-	@Column(name = "ROLE", nullable = true)
-	private String role;
+	@Column(name = "USERID", nullable = true)
+	private String userId;
 
+	/*@Column(name = "ACADEMIC_INFO", nullable = true)
+	private AcademicInfo academicInfo;*/
 }

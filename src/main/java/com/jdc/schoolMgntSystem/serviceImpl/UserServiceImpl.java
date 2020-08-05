@@ -25,14 +25,13 @@ public class UserServiceImpl  implements IUserService{
 	@Autowired
 	private StudentRepository studentRepo;
 	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@ModelAttribute("user")
 	public Registration userRegistration() {
 		return new Registration();
 	}
-	
-	
-	@Autowired
-	private UserRepository userRepository;
 	
 	
 	@Override

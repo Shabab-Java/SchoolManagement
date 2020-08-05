@@ -12,6 +12,8 @@ public class SchoolMgntSystemApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(SchoolMgntSystemApplication.class, args);
 		System.out.println("Server is up!!!");
+		
+		 
 	}
 
 }
