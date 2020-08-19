@@ -25,7 +25,7 @@ import com.jdc.schoolMgntSystem.service.IUserService;
 
 @RequestMapping("/api/v1")
 @RestController
-//@Controller
+
 public class UserController {
     @Autowired
     private UserRepository userRepository;

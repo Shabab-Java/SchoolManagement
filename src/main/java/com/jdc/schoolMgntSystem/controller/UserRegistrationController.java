@@ -36,9 +36,10 @@ public class UserRegistrationController {
 
 	@PostMapping("")
 	public String registerUserAccount(@ModelAttribute("user") Registration registration) {
-	
-		userService.save(registration);
-		return "redirect:/login";
+		//User user = new  User();
+		  userService.save(registration);
+		 System.out.println("Registration done");
+		return "redirect:/getStudentList";
 	}
 	
 	

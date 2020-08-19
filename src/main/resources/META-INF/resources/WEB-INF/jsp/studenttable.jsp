@@ -9,54 +9,65 @@
 <body>
 	<div align="center">
 		<h1>
-			<b>Teacher Profile Form</b>
+			<b>Student  Profile </b>
 		</h1>
-		<form action="<%= request.getContextPath() %>/teacher" method="post">
+		<form action="<%= request.getContextPath() %>/student/id" method="get">
 			<table style="with: 80%">
+				 <%--  <cforEach var = "student" items = "${studentlist }"> --%>
 				<tr>
 					<td>First Name</td>
-					<td><input type="text" name="firstName" /></td>
+					<td>${student.firstName}</td>
 				</tr>
 				<tr>
 					<td>Last Name</td>
-					<td><input type="text" name="lastName" /></td>
+					<td>${student.lastName}</td>
 				</tr>
 				<tr>
 					<td>Father Name</td>
-					<td><input type="text" name="username" /></td>
+					<td>${student.fatherName}</td>
 				</tr>
 				<tr>
+					<td>Roll Number</td>
+					<td> ${student.rollNumber}</td>
+				</tr>
+
+				<tr>
 					<td>Age</td>
-					<td><input type="text" name="age" /></td>
+					<td>${student.age }</td>
 				</tr>
 				<tr>
 					<td>Sex</td>
-					<td><input type="text" name="sex" /></td>
+					<td>${student.sex }</td>
+					<!-- <td><input type="radio" name="sex" value="Male" />Male <input
+						type="radio" name="sex" value="FeMale" />Female</td> -->
 				</tr>
+
 				<tr>
 					<td>Address</td>
-					<td><input type="text" name="address" /></td>
+					<td>${student.address }</td>
 				</tr>
 				<tr>
 					<td>Contact Number</td>
-					<td><input type="text" name="contactNumber" /></td>
+					<td>${student.contactNumber }</td>
 				</tr>
 				<tr>
 					<td>Image</td>
-					<td><input type="text" name="image" /></td>
+					<td>${student.image}</td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" name="email" /></td>
+					<td>${student.email }</td>
 				</tr>
 				<tr>
-					<td>Role</td>
-					<td><input type="text" name="role" /></td>
+					<td>User Id</td>
+					<td>${student.userId }</td>
 				</tr>
+
 			</table>
 			<input type="submit" value="Submit" />
 			<td><input type="reset" value="Reset" /></td>
 		</form>
 	</div>
 </body>
+
 </html>

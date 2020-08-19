@@ -39,11 +39,7 @@
 
 				<tr>
 					<td>Role</td>
-					<td><select>name ="role">
-							<option>student</option>
-							<option>teacher</option>
-							<option>staff</option>
-					</select></td>
+					<td><input type="text" name="role" /></td>
 				</tr>
 				<tr>
 					<td>Password</td>

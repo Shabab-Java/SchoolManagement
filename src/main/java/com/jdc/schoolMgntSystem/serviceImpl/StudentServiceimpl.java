@@ -1,15 +1,14 @@
 package com.jdc.schoolMgntSystem.serviceImpl;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jdc.schoolMgntSystem.dao.StudentRepository;
-import com.jdc.schoolMgntSystem.exception.BusinessErrorCode;
 import com.jdc.schoolMgntSystem.exception.BusinessException;
 import com.jdc.schoolMgntSystem.model.StudentProfile;
 import com.jdc.schoolMgntSystem.model.StudentProfileDto;
@@ -30,6 +29,19 @@ public class StudentServiceimpl implements IStudentService {
 	public void saveStudent(StudentProfile student) {
 		studentRepo.save(student);
 		
+	}
+	
+	@Override
+	public List<StudentProfile> getAllStudent(){
+		List<StudentProfile> studentlist = new ArrayList<StudentProfile>();
+		for(StudentProfile student : studentRepo.findAll())
+		studentlist.add(student);
+		return studentlist;
+	}
+	
+	@Override
+	public void deleteStudent(Long id){
+		studentRepo.deleteById(id);
 	}
 	
 	@Override
@@ -66,5 +78,8 @@ public class StudentServiceimpl implements IStudentService {
 		}
 	}
 
+	
+	
+	
 	}
 	

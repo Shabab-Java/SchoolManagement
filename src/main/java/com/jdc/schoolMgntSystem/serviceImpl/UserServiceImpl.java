@@ -35,7 +35,7 @@ public class UserServiceImpl  implements IUserService{
 	
 	
 	@Override
-	public User save(Registration registrationDto) {
+	public void save(Registration registrationDto) {
 		String role = registrationDto.getRole();
 		if(role.equals("student")){
 			saveStudent(registrationDto);
@@ -46,20 +46,28 @@ public class UserServiceImpl  implements IUserService{
 		else if( role.equals("staff")){
 			saveStaff(registrationDto);
 		}
-		UserMapper userMapper = new UserMapper();
-		User user = userMapper.map(registrationDto);
+		/*UserMapper userMapper = new UserMapper();
+		User user = new User();
+	      userMapper.map(registrationDto);
 		
-		return userRepository.save(user);
+		System.out.println("User added");*/
 	}
 
 	
 	public void saveStudent(@ModelAttribute("user") Registration registration){
 		StudentProfile student  = new StudentProfile();
+		student.setId(4);
 		student.setAge(registration.getAge());
 		student.setFirstName(registration.getFirstName());
 		student.setLastName(registration.getLastName());
+		student.setFatherName("Father");
+		student.setContactNumber("123456789");
+		student.setEmail("Email");
+		student.setImage("Image");
+		student.setSex("Male");
 		student.setAddress(registration.getPlace());
 		student.setRollNumber(registration.getUserId());
+		student.setUserId(registration.getUserId());
 		studentRepo.save(student);
 	}
 	public void saveTeacher(Registration registration){
@@ -83,11 +91,11 @@ public class UserServiceImpl  implements IUserService{
 	@Override
 	public void saveUser(Registration registration) throws BusinessException {
 		UserMapper userMapper = new UserMapper();
-		User user = userMapper.map(registration);
-	 if(user != null){
-	    userRepository.save(user);
+	     userMapper.map(registration);
+	/* if(user != null){
+	    (user);
 	 }else 
-		 throw new BusinessException(BusinessErrorCode.BU_ERR_REQ_OBJECT_NOT_FOUND, "Requested object not found in system");
+		 throw new BusinessException(BusinessErrorCode.BU_ERR_REQ_OBJECT_NOT_FOUND, "Requested object not found in system");*/
 	}
 
 	@Override

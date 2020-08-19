@@ -19,6 +19,6 @@ public interface IUserService  /*extends UserDetailsService*/ {
 	public void deleteUser(Long id)  throws ResourceNotFoundException;
 	public User updateUser(User user);
 	
-	User save(Registration registration);
+	public void save(Registration registration);
 
 }

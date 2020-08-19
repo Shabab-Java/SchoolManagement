@@ -1,5 +1,7 @@
 package com.jdc.schoolMgntSystem.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.jdc.schoolMgntSystem.exception.BusinessException;
@@ -12,5 +14,6 @@ public interface IStudentService {
 	
 	public void saveStudent(StudentProfile student);
 	public void editStudent(String userId,StudentProfileDto studentbody) throws BusinessException,ObjectNotFoundException;
-
+	public List<StudentProfile> getAllStudent();
+	public void deleteStudent(Long id);
 }
